@@ -19,6 +19,7 @@ class Stringset
         vector<list<string>> table;
         int num_elems;
         int size;
+        float load_factor = 0.7; // Load factor threshold for resizing hash table (70%) Can be changed
     public:
         Stringset();
         vector<list<string>> getTable() const;
@@ -27,4 +28,5 @@ class Stringset
         void insert(string word);
         bool find(string word) const;
         void remove(string word);
+        void resizeTable();
 };
